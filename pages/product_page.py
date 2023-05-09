@@ -27,3 +27,13 @@ class ProductPage(BasePage):
             alert.accept()
         except NoAlertPresentException:
             print("No second alert presented")
+
+    def should_be_the_same_names(self):
+        page_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME).text
+        basket_name = self.browser.find_element(*ProductPageLocators.BOOK_NAME_IN_BASKET).text
+        assert page_name == basket_name, "names are different"
+
+    def should_be_the_same_prices(self):
+        page_price = self.browser.find_element(*ProductPageLocators.BOOK_PRICE).text
+        basket_price = self.browser.find_element(*ProductPageLocators.PRODUCT_PRICE_BASKET).text
+        assert page_price == basket_price, "prices are different"
