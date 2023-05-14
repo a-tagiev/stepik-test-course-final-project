@@ -17,3 +17,14 @@ class ProductPageLocators:
     BOOK_NAME_IN_BASKET = (By.CSS_SELECTOR, "#messages .alert-success:nth-child(1) > .alertinner > strong")
     PRODUCT_PRICE_BASKET = (By.CSS_SELECTOR, "p.price_color")
     BOOK_PRICE = (By.CSS_SELECTOR, ".product_main .price_color")
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, ".alert-success")
+
+
+class BasePageLocators():
+    LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
+    LOGIN_LINK_INVALID = (By.CSS_SELECTOR, "#login_link_inc")
+    BASKET_LINK = (By.XPATH, '//a[text()="View basket"]')
+
+
+class BasketPageLocators():
+    EMPTY_BASKET = (By.XPATH, '//p[text()="Your basket is empty."]')
